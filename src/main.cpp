@@ -8,7 +8,7 @@ static const int DEFAULT_WINDOW_WIDTH = 1280;
 static const int DEFAULT_WINDOW_HEIGHT = 720;
 
 int main() {
-  SDL_Init(SDL_INIT_EVENTS);
+  // SDL_Init(SDL_INIT_EVENTS);
 
 #ifdef __APPLE__
   // SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS,
@@ -50,24 +50,28 @@ int main() {
   // SDL_GL_SetSwapInterval(1);
   // glfwSwapInterval(1);
 
-  glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  // glEnable(GL_BLEND);
+  // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-  SDL_Event event;
+  // SDL_Event event;
+  // bool quit = false;
+  // while (!quit) {
+  //   while (SDL_PollEvent(&event)) {
+  //     quit = SDL_QUIT == event.type;
+  //   }
 
-  bool quit = false;
-  while (!quit) {
-    while (SDL_PollEvent(&event)) {
-      quit = SDL_QUIT == event.type;
-    }
+  //   SDL_GL_SwapWindow(window);
+  // }
 
-    // SDL_GL_SwapWindow(window);
+  while (!glfwWindowShouldClose(window)) {
+    glClear(GL_COLOR_BUFFER_BIT);
     glfwSwapBuffers(window);
+    glfwPollEvents();
   }
 
   // SDL_GL_DeleteContext(glcontext);
   // SDL_DestroyWindow(window);
-  SDL_Quit();
+  // SDL_Quit();
   glfwTerminate();
 
   return 0;
