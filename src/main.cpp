@@ -40,6 +40,8 @@ int main() {
 
   bool quit = false;
   while (!quit) {
+    glClear(GL_COLOR_BUFFER_BIT);
+
     while (SDL_PollEvent(&event)) {
       quit = SDL_QUIT == event.type;
     }
