@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/
+build/
+debug/
+prototype.out.dSYM/
+.vscode/settings.json
+assets/save.config
+*.out
+*.o
+*.gch
